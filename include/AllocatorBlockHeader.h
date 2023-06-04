@@ -42,7 +42,7 @@ namespace BeeEngine::Internal
             uint32_t size;
             uint64_t isFree;
             uint32_t previousSize;
-            AllocatorBlockHeader(unsigned int size, bool isFree, unsigned int previousSize)
+            AllocatorBlockHeader(unsigned int size, bool isFree, unsigned int previousSize) noexcept
                     :size(size), isFree(isFree), previousSize(previousSize) {}
             inline std::atomic<AllocatorBlockHeader>* Next(std::atomic<AllocatorBlockHeader>* ptr) const
             {
